@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: manager-rest
+  profiles:
+    active: dev
+    group:
+      dev:
+        - dubbo
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+
+
+
+

@@ -1,0 +1,24 @@
+protocol: nacos
+address: ${spring.cloud.nacos.config.server-addr}
+
+dubbo:
+  protocol:
+    port: -1
+    name: dubbo
+  registry:
+    address: ${address}
+    protocol: ${protocol}
+  consumer:
+    check: false
+    group: ${dubbo.provider.group}
+  provider:
+    group: dubbo-group
+    retries: 0
+    filter: -exception
+    timeout: 60000
+  application:
+    name: ${spring.application.name}
+    logger: slf4j
+#    register-mode: instance
+#    service-discovery:
+#      migration: FORCE_APPLICATION

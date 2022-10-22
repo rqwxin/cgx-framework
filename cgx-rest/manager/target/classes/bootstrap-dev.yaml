@@ -1,0 +1,21 @@
+
+knife4j:
+  basic:
+    password: swagger
+    username: swagger
+
+server:
+  servlet:
+    context-path: /manager
+  port: 9696
+
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        shared-configs:
+          - data-id: application-dubbo.yaml
+
+
